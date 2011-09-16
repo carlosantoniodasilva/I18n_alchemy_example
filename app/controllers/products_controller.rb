@@ -12,8 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new.localized
-    if @product.update_attributes(params[:product])
+    @product = Product.new.localized(params[:product])
+    if @product.save
       redirect_to @product, :notice => "Successfully created product."
     else
       render :action => 'new'
