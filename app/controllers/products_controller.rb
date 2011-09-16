@@ -4,16 +4,16 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:id]).localized
   end
 
   def new
-    @product = Product.new
+    @product = Product.new.localized
   end
 
   def create
-    @product = Product.new(params[:product])
-    if @product.save
+    @product = Product.new.localized
+    if @product.update_attributes(params[:product])
       redirect_to @product, :notice => "Successfully created product."
     else
       render :action => 'new'
@@ -21,11 +21,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:id]).localized
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:id]).localized
     if @product.update_attributes(params[:product])
       redirect_to @product, :notice  => "Successfully updated product."
     else
