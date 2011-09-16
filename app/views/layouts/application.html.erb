@@ -12,6 +12,15 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+      <nav>
+        Locales:
+        <ul>
+          <% I18n.available_locales.each do |locale| %>
+            <li><%= link_to locale.to_s, { :locale => locale },
+              :class => ('active' if I18n.locale == locale) %></li>
+          <% end %>
+        </ul>
+      </nav>
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>

@@ -12,6 +12,20 @@ a {
   color: #0000FF;
 }
 
+nav {
+  float: right;
+}
+
+nav ul, nav li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+nav .active {
+  color: navy;
+}
+
 .clear {
   clear: both;
   height: 0;
