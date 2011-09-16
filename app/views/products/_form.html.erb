@@ -1,0 +1,28 @@
+<%= form_for @product do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.label :released_at %><br />
+    <%= f.text_field :released_at %>
+  </p>
+  <p>
+    <%= f.label :last_purchase_at %><br />
+    <%= f.text_field :last_purchase_at %>
+  </p>
+  <p>
+    <%= f.label :last_sale_at %><br />
+    <%= f.text_field :last_sale_at %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
